@@ -1,0 +1,31 @@
+---
+# defaults file for pip
+
+# ansible_python_interpreter: python3
+pip_package_name:
+  - libvirt-devel
+  - ruby-devel
+  - python3-devel
+  - epel-release
+  - python2-pip
+  - python2-setuptools
+  - python3-pip
+  - python3-setuptools
+  - python2-virtualenv
+  - gcc
+  - make
+
+pip_packages:
+  - pip
+  - setuptools
+  - ansible
+  - molecule
+  - "molecule[docker]"
+  - "molecule[podman]"
+  - molecule-libvirt
+  - python-vagrant
+pip_user: ansible
+# pip_executable: pip3
+pip_virtualenv: ~/molecule
+pip_virtualenv_python: python3
+pip_state: latest

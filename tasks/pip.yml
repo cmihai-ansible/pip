@@ -1,0 +1,26 @@
+---
+# Install docker-compose
+
+- name: install python-pip
+  package:
+    name: epel-release
+    state: present
+  become: true
+
+- name: install python-pip
+  package:
+    name: "{{ pip_package_name }}"
+    state: "{{ pip_package_state | default('present') }}"
+  become: true
+
+- name: install pip modules
+  pip:
+    executable: "{{ pip_executable | default(omit) }}"
+    extra_args: "{{ pip_extra_args | default(omit) }}"
+    name: "{{ pip_packages }}"
+    state: "{{ pip_state | default('present') }}"
+    virtualenv: "{{ pip_virtualenv | default(omit) }}"
+    virtualenv_command: "{{ pip_virtualenv_command | default(omit) }}"
+    virtualenv_python: "{{ pip_virtualenv_python | default(omit) }}"
+  become: true
+  become_user: "{{ pip_user }}"
