@@ -24,3 +24,4 @@
     virtualenv_python: "{{ pip_virtualenv_python | default(omit) }}"
   become: true
   become_user: "{{ pip_user }}"
+  tags: molecule-idempotence-notest
