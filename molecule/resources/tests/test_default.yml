@@ -3,9 +3,9 @@
 command:
   help:
     exit-status: 0
-    exec: "systemctl is-active pip"
+    exec: "ansible version"
     stdout:
-      - "/active/"
+      - "/ansible/"
     stderr: []
     timeout: 10000      # in milliseconds
     skip: false
